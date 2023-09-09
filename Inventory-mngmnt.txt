@@ -1,0 +1,26 @@
+CREATE DATABASE Inventory;
+USE Inventory;
+
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY AUTO_INCREMENT,
+    ProductName VARCHAR(255),
+    Category VARCHAR(255)
+);
+
+CREATE TABLE Inventory (
+    InventoryID INT PRIMARY KEY AUTO_INCREMENT,
+    ProductID INT,
+    InStockQuantity INT,
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+);
+
+-- Inserting data into Products
+INSERT INTO Products (ProductName, Category) VALUES ('Laptop', 'Electronics');
+INSERT INTO Products (ProductName, Category) VALUES ('Shirt', 'Apparel');
+INSERT INTO Products (ProductName, Category) VALUES ('Coffee Maker', 'Appliances');
+
+-- Inserting data into Inventory
+INSERT INTO Inventory (ProductID, InStockQuantity) VALUES (1, 10);
+INSERT INTO Inventory (ProductID, InStockQuantity) VALUES (2, 20);
+INSERT INTO Inventory (ProductID, InStockQuantity) VALUES (3, 5);
+
