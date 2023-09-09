@@ -4,11 +4,13 @@ const app = express();
 const port = 3000;
 
 // Connect to MySQL database
+require('dotenv').config();
+
 const db = mysql.createConnection({
-  host: 'azelbo.cnja5pfpp5uy.us-east-1.rds.amazonaws.com',
-  user: 'admin',
-  password: 'redhatdatabase',
-  database: 'inventory'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASS,
+  database: process.env.DB_NAME
 });
 
 db.connect((err) => {
