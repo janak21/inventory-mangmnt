@@ -67,3 +67,16 @@ The application has the following dependencies:
 }
 }
 ```
+## Docker Build and Run Steps
+This project includes a `Dockerfile` for containerization. Below are the steps to build and run the Docker container.
+
+## Build the Docker Image
+```bash
+docker build -t your-image-name .
+```
+## Run the Docker Container
+```bash
+docker run --env-file .env -p 3001:3001 your-image-name
+```
+This will map port 3001 inside the Docker container to port 3001 on your host machine. Now, the application should be accessible at `http://localhost:3001`.
+
