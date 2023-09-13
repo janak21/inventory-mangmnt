@@ -44,7 +44,7 @@ The API has the following endpoints:
 
 ## Running the Server
 
-The server listens on port 3001 and accepts traffic from anywhere. You can start it with `node app.js`. Once the server is running, you can test your API at `http://<Your-EC2-IP-Address>:3001`.
+The server listens on port 3001 and accepts traffic from anywhere. You can start it with `node app.js`. Once the server is running, you can test your API at `http://localhost:3001`.
 ```javascript
 app.listen(port, () => {
 console.log(Server running on http://localhost:${port});
